@@ -14,6 +14,11 @@
 		E1391592236ACCC900EBDB62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1391591236ACCC900EBDB62 /* Assets.xcassets */; };
 		E1391595236ACCC900EBDB62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1391593236ACCC900EBDB62 /* LaunchScreen.storyboard */; };
 		E139159D236AEAC300EBDB62 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E139159C236AEAC300EBDB62 /* FormViewController.swift */; };
+		E13915A1236C49BC00EBDB62 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915A0236C49BC00EBDB62 /* DataViewController.swift */; };
+		E13915A4236C7FB100EBDB62 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915A3236C7FB000EBDB62 /* CustomTextField.swift */; };
+		E13915A62370077D00EBDB62 /* PersonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915A52370077D00EBDB62 /* PersonDataModel.swift */; };
+		E13915A82370349900EBDB62 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915A72370349900EBDB62 /* DataCollectionViewCell.swift */; };
+		E13915CC23716BD900EBDB62 /* ShowDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915CB23716BD900EBDB62 /* ShowDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		E1391594236ACCC900EBDB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1391596236ACCC900EBDB62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E139159C236AEAC300EBDB62 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		E13915A0236C49BC00EBDB62 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		E13915A3236C7FB000EBDB62 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E13915A52370077D00EBDB62 /* PersonDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataModel.swift; sourceTree = "<group>"; };
+		E13915A72370349900EBDB62 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
+		E13915CB23716BD900EBDB62 /* ShowDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,15 +90,28 @@
 		E1391589236ACCC800EBDB62 /* PodAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				E13915A2236C7F9300EBDB62 /* BaseClasses */,
 				E139158A236ACCC800EBDB62 /* AppDelegate.swift */,
 				E139158C236ACCC800EBDB62 /* ViewController.swift */,
 				E139159C236AEAC300EBDB62 /* FormViewController.swift */,
+				E13915A52370077D00EBDB62 /* PersonDataModel.swift */,
 				E139158E236ACCC800EBDB62 /* Main.storyboard */,
+				E13915CB23716BD900EBDB62 /* ShowDataViewController.swift */,
 				E1391591236ACCC900EBDB62 /* Assets.xcassets */,
 				E1391593236ACCC900EBDB62 /* LaunchScreen.storyboard */,
 				E1391596236ACCC900EBDB62 /* Info.plist */,
+				E13915A0236C49BC00EBDB62 /* DataViewController.swift */,
+				E13915A72370349900EBDB62 /* DataCollectionViewCell.swift */,
 			);
 			path = PodAnimations;
+			sourceTree = "<group>";
+		};
+		E13915A2236C7F9300EBDB62 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E13915A3236C7FB000EBDB62 /* CustomTextField.swift */,
+			);
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13915A1236C49BC00EBDB62 /* DataViewController.swift in Sources */,
+				E13915CC23716BD900EBDB62 /* ShowDataViewController.swift in Sources */,
 				E139159D236AEAC300EBDB62 /* FormViewController.swift in Sources */,
+				E13915A62370077D00EBDB62 /* PersonDataModel.swift in Sources */,
 				E139158D236ACCC800EBDB62 /* ViewController.swift in Sources */,
 				E139158B236ACCC800EBDB62 /* AppDelegate.swift in Sources */,
+				E13915A82370349900EBDB62 /* DataCollectionViewCell.swift in Sources */,
+				E13915A4236C7FB100EBDB62 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

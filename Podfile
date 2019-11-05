@@ -5,7 +5,7 @@ target 'PodAnimations' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
     pod 'CoreAnimator', '~> 2.1.4'
-    
+    pod 'Hero'
   # Pods for PodAnimations
 
 end

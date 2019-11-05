@@ -8,10 +8,14 @@
 
 import UIKit
 import CoreAnimator
+import Hero
 
 class ViewController: UIViewController {
 
     var path: UIBezierPath!
+    let animationTime = 0.5
+    let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+
     
     @IBOutlet weak var registerLbl: UILabel!
     @IBOutlet weak var signupBtn: UIButton!
@@ -26,59 +30,48 @@ class ViewController: UIViewController {
         
         registerLbl.textColor = .orange
         
-        
+        signupBtn.backgroundColor = .orange
         signupBtn.setTitleColor(.black, for: .normal)
         signupBtn.setTitleColor(.black, for: .selected)
-        btnShape(isOval: true, viewToChange: signupBtn)
-        
+        signupBtn.layer.cornerRadius = signupBtn.frame.size.height / 2
         signupBtn.addTarget(self, action: #selector(signupBtnAction), for: .touchUpInside)
-    }
-    
-    private func btnShape(isOval: Bool, viewToChange: UIButton) {
-        viewToChange.backgroundColor = .clear
-        path = isOval ? UIBezierPath(ovalIn: viewToChange.bounds) : UIBezierPath(ovalIn: CGRect(x: viewToChange.frame.size.width/2 - viewToChange.frame.size.height/2, y: 0, width: viewToChange.frame.size.height, height: viewToChange.frame.size.height))
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = UIColor.orange.cgColor
-        viewToChange.layer.addSublayer(shapeLayer)
     }
     
     @objc private func signupBtnAction() {
         print("Button Pressed")
         registerLbl.isHidden = true
-        
-        let animator = CoreAnimator(layer: signupBtn.layer)
-        animator.move(y: -300).thenAfter(t: 0.5).preAnimationBlock {
-            print("Completion of animation")
-            self.signupBtn.isHidden = true
-            self.progressIndicatorAnimation()
-        }.spring.bounce.animate(t: 0.5)
+
+        let animator = CoreAnimator(view: signupBtn)
+        animator.move(y: -100).make(width: 100, height: 100).make(cornerRadius: Double(self.signupBtn.frame.size.width / 2)).preAnimationBlock {
+            self.activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+
+            self.activityIndicator.center = CGPoint(x: self.signupBtn.frame.size.width / 2, y: self.signupBtn.frame.size.height / 2)
+            self.signupBtn.addSubview(self.activityIndicator)
+            }.thenAfter(t: animationTime).postAnimationBlock {
+                self.activityIndicator.startAnimating()
+            self.moveButton()
+            }.animate(t: animationTime)
     }
     
-    private func progressIndicatorAnimation() {
-        
-        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        activityIndicator.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
-        activityIndicator.startAnimating()
-        self.view.addSubview(activityIndicator)
-        
-        let spinnerAnimation = CoreAnimator(view: activityIndicator)
-        spinnerAnimation.move(y: 500).wait(t: 2).postAnimationBlock {
+    private func moveButton() {
+        let animator = CoreAnimator(view: signupBtn)
+        animator.move(y: 600).thenAfter(t: animationTime).postAnimationBlock {
             self.openForm()
-            }.animate(t: 1) {
-            activityIndicator.stopAnimating()
+            }.animate(t: animationTime) {
+                self.signupBtn.isHidden = true
         }
     }
     
     private func openForm() {
+        activityIndicator.stopAnimating()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let formVC = storyboard.instantiateViewController(withIdentifier: "FormViewController") as! FormViewController
-        self.present(formVC, animated: true) {
+        let navController = UINavigationController(rootViewController: formVC)
+        navController.hero.isEnabled = true
+        self.present(navController, animated: true){
             self.signupBtn.isHidden = false
             self.registerLbl.isHidden = false
         }
-        
     }
 }
 
