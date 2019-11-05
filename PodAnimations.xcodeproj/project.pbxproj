@@ -90,18 +90,13 @@
 		E1391589236ACCC800EBDB62 /* PodAnimations */ = {
 			isa = PBXGroup;
 			children = (
-				E13915A2236C7F9300EBDB62 /* BaseClasses */,
-				E139158A236ACCC800EBDB62 /* AppDelegate.swift */,
-				E139158C236ACCC800EBDB62 /* ViewController.swift */,
-				E139159C236AEAC300EBDB62 /* FormViewController.swift */,
-				E13915A52370077D00EBDB62 /* PersonDataModel.swift */,
-				E139158E236ACCC800EBDB62 /* Main.storyboard */,
-				E13915CB23716BD900EBDB62 /* ShowDataViewController.swift */,
-				E1391591236ACCC900EBDB62 /* Assets.xcassets */,
-				E1391593236ACCC900EBDB62 /* LaunchScreen.storyboard */,
 				E1391596236ACCC900EBDB62 /* Info.plist */,
-				E13915A0236C49BC00EBDB62 /* DataViewController.swift */,
-				E13915A72370349900EBDB62 /* DataCollectionViewCell.swift */,
+				E13915D623719E6800EBDB62 /*  AppDelegate */,
+				E13915D523719E5400EBDB62 /* Resources */,
+				E13915D423719E3D00EBDB62 /* Views */,
+				E13915CE23719DAF00EBDB62 /* Controllers */,
+				E13915CD23719D9A00EBDB62 /* Model */,
+				E13915A2236C7F9300EBDB62 /* BaseClasses */,
 			);
 			path = PodAnimations;
 			sourceTree = "<group>";
@@ -112,6 +107,91 @@
 				E13915A3236C7FB000EBDB62 /* CustomTextField.swift */,
 			);
 			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		E13915CD23719D9A00EBDB62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E13915A52370077D00EBDB62 /* PersonDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E13915CE23719DAF00EBDB62 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E13915D223719E1100EBDB62 /* DataDetailsScreen */,
+				E13915D123719E0500EBDB62 /* DataScreen */,
+				E13915D023719DE900EBDB62 /* AddDataScreen */,
+				E13915CF23719DD700EBDB62 /* RegisterScreen */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E13915CF23719DD700EBDB62 /* RegisterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E139158C236ACCC800EBDB62 /* ViewController.swift */,
+			);
+			path = RegisterScreen;
+			sourceTree = "<group>";
+		};
+		E13915D023719DE900EBDB62 /* AddDataScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E139159C236AEAC300EBDB62 /* FormViewController.swift */,
+			);
+			path = AddDataScreen;
+			sourceTree = "<group>";
+		};
+		E13915D123719E0500EBDB62 /* DataScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E13915D323719E1C00EBDB62 /* DataCollectionViewCell */,
+				E13915A0236C49BC00EBDB62 /* DataViewController.swift */,
+			);
+			path = DataScreen;
+			sourceTree = "<group>";
+		};
+		E13915D223719E1100EBDB62 /* DataDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E13915CB23716BD900EBDB62 /* ShowDataViewController.swift */,
+			);
+			path = DataDetailsScreen;
+			sourceTree = "<group>";
+		};
+		E13915D323719E1C00EBDB62 /* DataCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E13915A72370349900EBDB62 /* DataCollectionViewCell.swift */,
+			);
+			path = DataCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E13915D423719E3D00EBDB62 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E139158E236ACCC800EBDB62 /* Main.storyboard */,
+				E1391593236ACCC900EBDB62 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E13915D523719E5400EBDB62 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1391591236ACCC900EBDB62 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E13915D623719E6800EBDB62 /*  AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E139158A236ACCC800EBDB62 /* AppDelegate.swift */,
+			);
+			path = " AppDelegate";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
