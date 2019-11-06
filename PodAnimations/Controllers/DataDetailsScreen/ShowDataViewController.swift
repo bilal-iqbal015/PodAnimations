@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreAnimator
+import Hero
 
 class ShowDataViewController: UIViewController {
     
@@ -24,6 +26,9 @@ class ShowDataViewController: UIViewController {
     }
     
     private func setupScreen() {
+        
+        self.view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dismissScreen(gr:))))
+        
         nameLbl.text = person?.name
         emailLbl.text = person?.email
         phoneLBl.text = person?.phoneNo
@@ -39,5 +44,24 @@ class ShowDataViewController: UIViewController {
         view.hero.modifiers = [ .translate(x: 0, y: -20, z: 0)]
         navigationController?.hero.navigationAnimationType = .selectBy(presenting: .none, dismissing: .none)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    @objc private func dismissScreen(gr: UIPanGestureRecognizer) {
+        let translation = gr.translation(in: view)
+        switch gr.state {
+        case .began:
+            self.navigationController?.popViewController(animated: true)
+        case .changed:
+            Hero.shared.update(translation.y / view.bounds.height)
+        default:
+            let velocity = gr.velocity(in: view)
+            if ((translation.y + velocity.y) / view.bounds.height) > 0.5 {
+                Hero.shared.finish()
+            } else {
+                Hero.shared.cancel()
+            }
+        }
     }
 }

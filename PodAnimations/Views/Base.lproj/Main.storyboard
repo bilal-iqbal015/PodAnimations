@@ -277,7 +277,7 @@
                                 <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ezv-HJ-OHw"/>
-                                    <constraint firstAttribute="width" constant="70" id="mVY-Pj-Q8R"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="mVY-Pj-Q8R"/>
                                 </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -310,6 +310,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWM-je-gSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3345" y="-53"/>
+        </scene>
+        <!--Example View Controller-->
+        <scene sceneID="rbo-2O-xqv">
+            <objects>
+                <viewController storyboardIdentifier="ExampleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1cw-ee-eFD" customClass="ExampleViewController" customModule="PodAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bol-YL-7Tg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LlX-5p-szt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQC-lk-qlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4168" y="-54"/>
         </scene>
     </scenes>
     <resources>
