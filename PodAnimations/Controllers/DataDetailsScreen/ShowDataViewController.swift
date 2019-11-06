@@ -51,15 +51,18 @@ class ShowDataViewController: UIViewController {
     
     
     @objc private func dismissScreen(gr: UIPanGestureRecognizer) {
-        let translation = gr.translation(in: view)
+        let translation = gr.translation(in: nil)
+        let progress = translation.y / view.bounds.height
         switch gr.state {
         case .began:
             self.navigationController?.popViewController(animated: true)
         case .changed:
-            Hero.shared.update(translation.y / view.bounds.height)
+            Hero.shared.update(progress)
+            let currentPos = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
+            Hero.shared.apply(modifiers: [.position(currentPos)], to: view)
         default:
-            let velocity = gr.velocity(in: view)
-            if ((translation.y + velocity.y) / view.bounds.height) > 0.5 {
+            let velocity = gr.velocity(in: nil)
+            if (progress + velocity.y) / view.bounds.height > 0.3 {
                 Hero.shared.finish()
             } else {
                 Hero.shared.cancel()
