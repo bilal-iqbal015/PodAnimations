@@ -16,6 +16,8 @@ class ShowDataViewController: UIViewController {
     
     @IBOutlet weak var dismissScreenBtn: UIButton!
     
+    @IBOutlet weak var viewToMove: UIView!
+    
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var phoneLBl: UILabel!

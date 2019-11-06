@@ -58,7 +58,8 @@ class DataViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let showDataVC = storyboard.instantiateViewController(withIdentifier: "ShowDataViewController") as! ShowDataViewController
         showDataVC.person = personsArray[indexPath.item]
-        cell.hero.modifiers = [.spring(stiffness: 250, damping: 25), .scale(x: UIScreen.main.bounds.size.width, y: UIScreen.main.bounds.size.height, z: 0)]
+        showDataVC.view.hero.id = cell.viewData.hero.id
+        cell.viewData.hero.modifiers = [.spring(stiffness: 250, damping: 25)]
         navigationController?.hero.navigationAnimationType = .selectBy(presenting: .none
             , dismissing: .none)
         self.navigationController?.pushViewController(showDataVC, animated: true)
@@ -80,9 +81,9 @@ extension DataViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = dataCollectionView.cellForItem(at: indexPath){
-            cell.hero.id = "123"
-            showDataScreen(cell: cell as! DataCollectionViewCell, indexPath: indexPath)
+        if let cell = dataCollectionView.cellForItem(at: indexPath) as? DataCollectionViewCell{
+            cell.viewData.hero.id = "123" + "\(indexPath.item)"
+            showDataScreen(cell: cell , indexPath: indexPath)
         }
     }
 }
