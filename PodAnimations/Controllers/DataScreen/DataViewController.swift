@@ -26,7 +26,7 @@ class DataViewController: UIViewController {
         personsArray.removeAll()
         self.hero.isEnabled = true
         
-        self.view.backgroundColor = .gray
+        self.view.backgroundColor = .black
         self.navigationController?.navigationBar.isHidden = true
         
         let person1 = PersonDataModel(name: "Mustafa", email: "mustafa@xyz.com", phoneNo: "123")
@@ -49,7 +49,7 @@ class DataViewController: UIViewController {
 
         
         
-        dataCollectionView.backgroundColor = .gray
+        dataCollectionView.backgroundColor = .black
         dataCollectionView.delegate = self
         dataCollectionView.dataSource = self
     }

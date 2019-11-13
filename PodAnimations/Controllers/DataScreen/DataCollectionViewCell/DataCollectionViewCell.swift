@@ -14,7 +14,11 @@ class DataCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     
     func setupCollectionViewCell(){
-        self.contentView.backgroundColor = .gray
+        
+        viewData.layer.borderColor = UIColor(red: 1, green: 0.5, blue: 0, alpha: 1).cgColor
+        viewData.layer.borderWidth = 4
+        
+        self.contentView.backgroundColor = .black
         self.viewData.backgroundColor = .black
         self.viewData.layer.cornerRadius = 8
         self.nameLbl.textColor = .orange

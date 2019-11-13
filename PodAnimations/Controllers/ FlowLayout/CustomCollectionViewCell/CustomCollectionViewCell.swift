@@ -17,7 +17,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         labelView.backgroundColor = .orange
         labelView.layer.cornerRadius = 8
         labelView.layer.borderColor = UIColor(ciColor: .black).cgColor
-        labelView.layer.borderWidth = 1
+        labelView.layer.borderWidth = 4
         
         dataLbl.text = data.name
     }
