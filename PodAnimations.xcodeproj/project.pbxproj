@@ -19,6 +19,11 @@
 		E13915A62370077D00EBDB62 /* PersonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915A52370077D00EBDB62 /* PersonDataModel.swift */; };
 		E13915A82370349900EBDB62 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915A72370349900EBDB62 /* DataCollectionViewCell.swift */; };
 		E13915CC23716BD900EBDB62 /* ShowDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915CB23716BD900EBDB62 /* ShowDataViewController.swift */; };
+		E13915E02373FA0F00EBDB62 /* FlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915DF2373FA0F00EBDB62 /* FlowLayoutViewController.swift */; };
+		E13915E72379480C00EBDB62 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915E62379480C00EBDB62 /* CustomCollectionViewCell.swift */; };
+		E13915E92379835100EBDB62 /* PaginatedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915E82379835100EBDB62 /* PaginatedCollectionView.swift */; };
+		E13915EB2379A77900EBDB62 /* PersonSubjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915EA2379A77900EBDB62 /* PersonSubjects.swift */; };
+		E13915EE237A925A00EBDB62 /* SubjectsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13915ED237A925A00EBDB62 /* SubjectsDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		E13915A52370077D00EBDB62 /* PersonDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataModel.swift; sourceTree = "<group>"; };
 		E13915A72370349900EBDB62 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		E13915CB23716BD900EBDB62 /* ShowDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataViewController.swift; sourceTree = "<group>"; };
+		E13915DF2373FA0F00EBDB62 /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
+		E13915E62379480C00EBDB62 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		E13915E82379835100EBDB62 /* PaginatedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedCollectionView.swift; sourceTree = "<group>"; };
+		E13915EA2379A77900EBDB62 /* PersonSubjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSubjects.swift; sourceTree = "<group>"; };
+		E13915ED237A925A00EBDB62 /* SubjectsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				E13915A3236C7FB000EBDB62 /* CustomTextField.swift */,
+				E13915E82379835100EBDB62 /* PaginatedCollectionView.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -113,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E13915A52370077D00EBDB62 /* PersonDataModel.swift */,
+				E13915EA2379A77900EBDB62 /* PersonSubjects.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +132,8 @@
 		E13915CE23719DAF00EBDB62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E13915EC237A923E00EBDB62 /* SubjectDetailsScreen */,
+				E13915DE2373F9FA00EBDB62 /*  FlowLayout */,
 				E13915D223719E1100EBDB62 /* DataDetailsScreen */,
 				E13915D123719E0500EBDB62 /* DataScreen */,
 				E13915D023719DE900EBDB62 /* AddDataScreen */,
@@ -192,6 +206,31 @@
 				E139158A236ACCC800EBDB62 /* AppDelegate.swift */,
 			);
 			path = " AppDelegate";
+			sourceTree = "<group>";
+		};
+		E13915DE2373F9FA00EBDB62 /*  FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				E13915E5237947ED00EBDB62 /* CustomCollectionViewCell */,
+				E13915DF2373FA0F00EBDB62 /* FlowLayoutViewController.swift */,
+			);
+			path = " FlowLayout";
+			sourceTree = "<group>";
+		};
+		E13915E5237947ED00EBDB62 /* CustomCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E13915E62379480C00EBDB62 /* CustomCollectionViewCell.swift */,
+			);
+			path = CustomCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E13915EC237A923E00EBDB62 /* SubjectDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E13915ED237A925A00EBDB62 /* SubjectsDetailsViewController.swift */,
+			);
+			path = SubjectDetailsScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,13 +349,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13915A1236C49BC00EBDB62 /* DataViewController.swift in Sources */,
+				E13915E72379480C00EBDB62 /* CustomCollectionViewCell.swift in Sources */,
 				E13915CC23716BD900EBDB62 /* ShowDataViewController.swift in Sources */,
 				E139159D236AEAC300EBDB62 /* FormViewController.swift in Sources */,
 				E13915A62370077D00EBDB62 /* PersonDataModel.swift in Sources */,
+				E13915EB2379A77900EBDB62 /* PersonSubjects.swift in Sources */,
 				E139158D236ACCC800EBDB62 /* ViewController.swift in Sources */,
+				E13915E02373FA0F00EBDB62 /* FlowLayoutViewController.swift in Sources */,
 				E139158B236ACCC800EBDB62 /* AppDelegate.swift in Sources */,
 				E13915A82370349900EBDB62 /* DataCollectionViewCell.swift in Sources */,
 				E13915A4236C7FB100EBDB62 /* CustomTextField.swift in Sources */,
+				E13915E92379835100EBDB62 /* PaginatedCollectionView.swift in Sources */,
+				E13915EE237A925A00EBDB62 /* SubjectsDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

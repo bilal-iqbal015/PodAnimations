@@ -15,6 +15,7 @@ class ShowDataViewController: UIViewController {
     var person: PersonDataModel?
     
     @IBOutlet weak var dismissScreenBtn: UIButton!
+    @IBOutlet weak var flowBtn: UIButton!
     
     @IBOutlet weak var viewToMove: UIView!
     
@@ -35,12 +36,23 @@ class ShowDataViewController: UIViewController {
         emailLbl.text = person?.email
         phoneLBl.text = person?.phoneNo
         
+        flowBtn.layer.cornerRadius = 8
+        flowBtn.addTarget(self, action: #selector(flowBtnAction), for: .touchUpInside)
+        
         dismissScreenBtn.setTitle("Dismiss", for: .normal)
         dismissScreenBtn.setTitle("Dismiss", for: .selected)
         dismissScreenBtn.layer.cornerRadius = 8
         dismissScreenBtn.addTarget(self, action: #selector(btnDismiss), for: .touchUpInside)
     }
 
+    @objc private func flowBtnAction() {
+        print("Button working")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "FlowLayoutViewController") as! FlowLayoutViewController
+        navigationController?.hero.navigationAnimationType = .selectBy(presenting: .auto, dismissing: .auto)
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     @objc private func btnDismiss() {
         print("Dismissed Screen")
         view.hero.modifiers = [ .translate(x: 0, y: -20, z: 0)]
